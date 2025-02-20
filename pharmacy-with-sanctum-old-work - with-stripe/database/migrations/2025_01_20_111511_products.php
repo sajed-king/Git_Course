@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->string('image','1024')->nullable();
             $table->text('description');
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->Integer('price');
             $table->foreignId('category_id');
             $table->Integer('amount');
+            $table->foreignId('company_id')->nullable();
             $table->timestamps();
             
         });
